@@ -101,6 +101,7 @@ img {
 
 .showcase-text {
     color: var(--light-color);
+    animation: slideInFromLeft 1s ease-in;
 }
 
 .showcase-text h1 {
@@ -123,6 +124,7 @@ img {
     padding: 40px;
     z-index: 100;
     justify-self: flex-end;
+    animation: slideInFromRight 1s ease-in;
 }
 
 .form-control input[type="text"],
@@ -146,4 +148,221 @@ img {
     -webkit-transform: skewY(-2deg);
     -moz-transform: skewY(-2deg);
     -ms-transform: skewY(-2deg);
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Stats */
+
+.stats {
+    padding-top: 100px;
+    animation: slideInFromBottom 1s ease-in;
+}
+
+.stats-heading {
+    max-width: 500px;
+    margin: auto;
+}
+
+.stats .grid h3 {
+    font-size: 35px;
+}
+
+.stats .grid p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* CLI */
+
+.cli .grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.cli .grid>*:first-child {
+    grid-row: 1 / span 2;
+    grid-column: 1 / span 2
+}
+
+/* Cloud */
+
+.cloud .lead {
+    font-size: 20px;
+}
+
+/* Languages */
+
+.languages .flex {
+    flex-wrap: wrap;
+}
+
+.languages .card {
+    text-align: center;
+    margin: 18px 10px 40px;
+    transition: transform 0.2s ease-in;
+}
+
+.languages .card h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+
+
+.languages .card:hover {
+    transform: translateY(-10px);
+}
+
+/* Footer */
+
+.footer .social a {
+    margin: 0 10px;
+}
+
+@media (max-width: 798px) {
+
+    .showcase-text {
+        animation: slideInFromTop 1s ease-in;
+    }
+
+    .showcase-form {
+        animation: slideInFromBottom 1s ease-in;
+    }
+
+    .showcase .grid {
+        overflow: visible;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 30px;
+    }
+
+
+    .showcase-text {
+        color: var(--light-color);
+    }
+
+    .showcase-text h1 {
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .showcase-text p {
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    .showcase {
+        height: 100%;
+    }
+
+    .showcase .container {
+        text-align: center;
+    }
+
+    .showcase-text h1 {
+        margin-top: 30px;
+    }
+
+    .showcase-form {
+        width: 400px;
+        margin: auto;
+    }
+
+
+
+}
+
+
+
+@media (max-width: 568px) {
+
+    .showcase .container {
+        text-align: center;
+    }
+
+    .showcase-text h1 {
+        margin-top: 30px;
+    }
+
+    .showcase-form {
+        width: 300px;
+    }
+
+    .navbar .container {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .navbar ul {
+        background-color: rgba(0, 0, 0, 0.1);
+        color: #fff;
+    }
+
+    .navbar ul {
+        padding: 10px;
+    }
+
+    .logo {
+        margin: 1rem auto;
+    }
+
+    .stats .container .grid {
+        grid-template-columns: auto;
+    }
+
+    .cli .grid {
+        grid-template-columns: auto;
+        gap: 10;
+    }
+
+    .cli .grid>*:first-child {
+        grid-row: auto;
+        grid-column: auto
+    }
+
+    .cloud .grid {
+        grid-template-columns: auto;
+    }
+
+    .footer .grid {
+        grid-template-columns: auto;
+    }
 }
